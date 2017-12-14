@@ -6,6 +6,6 @@ steps:
     env:  ['PROJECT_ROOT=github.com/stable.k8s.psg.io/kube-cert-manager']
     args: ['build', '.']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '--tag=gcr.io/$PROJECT_ID/kube-cert-manager', '.']
+    args: ['build', '--tag=gcr.io/$PROJECT_ID/kube-cert-manager:$TAG_NAME', '.']
 
-images: ['gcr.io/$PROJECT_ID/kube-cert-manager']
+images: ['gcr.io/$PROJECT_ID/kube-cert-manager:$TAG_NAME']
